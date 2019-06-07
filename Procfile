@@ -1,1 +1,1 @@
-ECHO is on.
+worker: python veno.py
