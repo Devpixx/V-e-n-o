@@ -3,7 +3,7 @@ from discord.ext import commands, tasks
 from itertools import cycle
 import os
 
-client = commands.Bot(command_prefix="~")
+client = commands.Bot(command_prefix=["~","-"] ,description="C o d e : V")
 status = cycle(["Higefive des Monats", "Savas"])
 
 @client.event
@@ -68,11 +68,10 @@ async def commands(ctx):
     embed.add_field(name="~Facebook", value="value1")
     embed.add_field(name="~YouTube", value="value1")
 
-    embed.add_field(name="~Clear", value="value1")
     embed.add_field(name="~Top_Clip", value="value1")
 
     embed.add_field(name="~Follower", value="value1")
-    embed.add_field(name="Aufrufe", value="value1")
+    embed.add_field(name="~Aufrufe", value="value1")
 
 
     await ctx.send(embed=embed)
