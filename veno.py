@@ -4,7 +4,7 @@ from itertools import cycle
 import os
 
 client = commands.Bot(command_prefix=["~","-"] ,description="V e n o")
-status = cycle(["Higefive des Monats", "Savas"])
+status = cycle(["Higefive des Monats", "CptErde,xSpritneyBeersx,MrPerezTv,fokx1337,Nick0478,Redsnake88,Amplish"])
 
 @client.event
 async def on_ready():
@@ -104,7 +104,7 @@ async def commands(ctx):
     embed.add_field(name="~Top_Clip", value="~top_clip")
 
     embed.add_field(name="~Follower", value="~follower")
-    embed.add_field(name="~Aufrufe", value="~aufrufe")
+    embed.add_field(name="-Aufrufe", value="~aufrufe")
 
 
     await ctx.send(embed=embed)
