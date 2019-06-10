@@ -18,7 +18,7 @@ async def change_status():
 
 @client.command()
 async def G(ctx):
-    await ctx.send(f"**G steht für Gönnen**")
+    await ctx.send(f"**G steht für Gönnen :Venotvtwitch350:")
 
 @client.command()
 async def g(ctx):
