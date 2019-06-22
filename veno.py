@@ -120,8 +120,8 @@ async def on_message(message):
         global count
         count = len(msg.split())
         count -= 1
-        emoji_list = [' ', ':regional_indicator_a:', ':regional_indicator_b:', ':regional_indicator_c:',
-                      ':regional_indicator_d:', ':regional_indicator_e:']
+        emoji_list = [' ', ':VenoDaumenR:', ':VenoDaumenR:', ':VenoDaumenR:',
+                      ':VenoDaumenR:', ':VenoDaumenR:']
         skip_msg = msg_list[0]
         global lst_emoji
         lst_emoji = emoji_list[count]
