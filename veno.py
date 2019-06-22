@@ -6,6 +6,11 @@ import os
 client = commands.Bot(command_prefix=["~","-"] ,description="V e n o")
 status = cycle(["Higefive des Monats", "CptErde,xSpritneyBeersx,MrPerezTv,fokx1337,Nick0478,Redsnake88,Amplish"])
 
+reaction_list = ['\U0001F1E6', '\U0001F1E7', '\U0001F1E8', '\U0001F1E9', '\U0001F1EA']
+lst_emoji = ''
+count = 0
+vote_list = []
+
 @client.event
 async def on_ready():
     change_status.start()
@@ -104,7 +109,34 @@ async def commands(ctx):
     embed.add_field(name="~Top_Clip", value="~top_clip")
 
     embed.add_field(name="~Follower", value="~follower")
-    embed.add_field(name="-Aufrufe", value="~aufrufe")
+    embed.add_field(name="-Aufrufe", value="~aufrurufe")
+
+@client.event
+async def on_message(message):
+
+    if message.content.startswith('/vote'):
+        msg = message.content[6:]
+        msg_list = msg.split()
+        global count
+        count = len(msg.split())
+        count -= 1
+        emoji_list = [' ', ':regional_indicator_a:', ':regional_indicator_b:', ':regional_indicator_c:',
+                      ':regional_indicator_d:', ':regional_indicator_e:']
+        skip_msg = msg_list[0]
+        global lst_emoji
+        lst_emoji = emoji_list[count]
+
+        if client.user != message.author:
+            await message.channel.send(skip_msg)
+
+            for emoji_list, msg_list in zip(emoji_list, msg_list):
+                if msg_list == skip_msg:
+                    continue
+                await message.channel.send(emoji_list + msg_list)
+
+    if message.content.startswith(lst_emoji):
+        for i in range(0, count):
+            await message.add_reaction(reaction_list[i])
 
 
     await ctx.send(embed=embed)
