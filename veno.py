@@ -63,6 +63,10 @@ async def Facebook(ctx):
     await ctx.send(f"**https://www.facebook.com/VenoTV**")
 
 @client.command()
+async def ping(ctx):
+    await ctx.send(f"{round(client.latency * 1000)}ms")
+
+@client.command()
 async def facebook(ctx):
     await ctx.send(f"**https://www.facebook.com/VenoTV**")
 
