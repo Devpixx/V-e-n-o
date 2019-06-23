@@ -86,6 +86,14 @@ async def youtube(ctx):
 async def version(ctx):
     await ctx.send(f"**0.0.1 Beta**")
 
+@client.command(aliases=["echo"])
+async def say(ctx, *, words):
+    await ctx.send(words)
+
+@client.command(aliases=["echo"])
+async def Say(ctx, *, words):
+    await ctx.send(words)
+
 @client.command()
 async def commands(ctx):
     embed = discord.Embed(title="Hilfe Menü", description="Hier siehst du verschiedene Commands", colour=discord.Color.from_rgb(0, 255, 34), url="https://www.twitch.tv/venomenice")
@@ -104,7 +112,8 @@ async def commands(ctx):
     embed.add_field(name="~Top_Clip", value="~top_clip")
 
     embed.add_field(name="~Follower", value="~follower")
-    embed.add_field(name="-Aufrufe", value="~aufrurufe")
+    embed.add_field(name="~Aufrufe", value="~aufrurufe")
+    embed.add_field(name="~Say", value="~say")
 
     await ctx.send(embed=embed)
 client.run(os.getenv("TOKEN"))
