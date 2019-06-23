@@ -90,10 +90,6 @@ async def version(ctx):
 async def say(ctx, *, words):
     await ctx.send(words)
 
-@client.command(aliases=["echo"])
-async def Say(ctx, *, words):
-    await ctx.send(words)
-
 @client.command()
 async def commands(ctx):
     embed = discord.Embed(title="Hilfe Menü", description="Hier siehst du verschiedene Commands", colour=discord.Color.from_rgb(0, 255, 34), url="https://www.twitch.tv/venomenice")
